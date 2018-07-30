@@ -17,9 +17,7 @@ import sys, os
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#sys.path.insert(0, os.path.abspath('../..'))
-#import alignak
-#from alignak.version import VERSION
+#sys.path.insert(0, os.path.abspath('docs'))
 
 # Fix for missing modules
 class Mock(object):
@@ -56,21 +54,21 @@ for mod_name in MOCK_MODULES:
 # -- General configuration -----------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-#needs_sphinx = '1.0'
+needs_sphinx = '1.52'
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.intersphinx', 'sphinx.ext.todo', 'sphinx.ext.coverage', 'sphinx.ext.pngmath', 'sphinx.ext.ifconfig', 'sphinx.ext.viewcode', 'sphinx.ext.graphviz', 'sphinx.ext.inheritance_diagram']
 
 #extensions = ['rst2pdf.pdfbuilder']
-#pdf_documents = [('index', u'GEP', u'Generalize Enhancer Predictor', u'Shalu Jhanwar'),]
+#pdf_documents = [('index', u'GEP', u'Generalized Enhancer Predictor', u'Ajinkya Deogade', u'Shalu Jhanwar'),]
+
 # Debian 6 do NOT have such extension
 try:
    import sphinx.ext.mathjax
    extensions.append('sphinx.ext.mathjax')
 except ImportError:
    pass
-
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -146,7 +144,7 @@ html_theme = 'sphinx_rtd_theme'
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
-html_theme_path = ["../theme"]
+html_theme_path = ["./theme"]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -175,7 +173,7 @@ html_static_path = ['_static']
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
-#html_use_smartypants = True
+html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
@@ -191,7 +189,7 @@ html_static_path = ['_static']
 #html_use_index = True
 
 # If true, the index is split into individual pages for each letter.
-#html_split_index = False
+html_split_index = True
 
 # If true, links to the reST sources are added to the pages.
 #html_show_sourcelink = True
@@ -200,7 +198,7 @@ html_static_path = ['_static']
 #html_show_sphinx = True
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
-#html_show_copyright = True
+html_show_copyright = True
 
 # If true, an OpenSearch description file will be output, and all pages will
 # contain a <link> tag referring to it.  The value of this option must be the
@@ -211,11 +209,10 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Shaludoc'
+htmlhelp_basename = 'GEP'
 
 
 # -- Options for LaTeX output --------------------------------------------------
-
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',
