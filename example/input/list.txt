@@ -1,0 +1,8 @@
+/Users/sjhanwar/Dropbox/ML_tool_shalu/experiments/sj_9/config/Dnase.bed	Dnase
+/Users/sjhanwar/Dropbox/ML_tool_shalu/experiments/sj_9/config/H3k27ac.bed	H3k27ac
+/Users/sjhanwar/Dropbox/ML_tool_shalu/experiments/sj_9/config/H3k27me3.bed	H3k27me3
+/Users/sjhanwar/Dropbox/ML_tool_shalu/experiments/sj_9/config/H3k36me3.bed	H3k36me3
+/Users/sjhanwar/Dropbox/ML_tool_shalu/experiments/sj_9/config/H3k4me1.bed	H3k4me1
+/Users/sjhanwar/Dropbox/ML_tool_shalu/experiments/sj_9/config/H3k4me1_H3k4me3_ratio.bed	H3k4me1_H3K4me3
+/Users/sjhanwar/Dropbox/ML_tool_shalu/experiments/sj_9/config/H3k4me3.bed	H3k4me3
+/Users/sjhanwar/Dropbox/ML_tool_shalu/experiments/sj_9/config/P300.bed	P300

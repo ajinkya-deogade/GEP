@@ -1,0 +1,45 @@
+#!/bin/bash
+
+set -e
+set -u
+set -x
+
+#Feature selection
+time ./featureSelection.py --data-file ../example/input/sample_training.txt --output-folder ../example/ouput/featureSelection --feature-columns "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17" --label-column "1"
+
+#Train and predict GEP
+time ./trainAndPredictGEP.py --data-file ../example/input/sample_training.txt --output-folder ../example/ouput/trainAndPredictGEP/Model/1296HepG2_832K562 --feature-columns "3,4,5,6,7,8,9,15,17" --label-column "1" --percent-test-size 0.20 --fold-cross-validation 10 --save-file "20151115" --n-estimators "10, 100, 1000" --max-depth-start 5 --max-depth-end 10 --n-jobs 4 --verbosity 1
+
+#n-fold cross-validation
+time ./crossValidation.py --data-file ../example/input/sample_training.txt --output-folder ../example/ouput/crossValidation --feature-columns "3,4,5,6,7,8,9,15,17" --label-column "1" --fold-cross-validation 10 --save-file "20151115" --RF_n-estimators "100" --RF_max-depth 5 --verbosity 1
+
+#Validation of the prediction
+time ./validationTestSet.py --output-folder ../example/ouput/validationTestSet --label-column "1" --feature-columns "3,4,5,6,7,8,9,15,17" --test_file ../example/input/test.txt --model_file ../model/Model_20151117.pkl --scaler_file ../model/Scaler_20151117.pkl --save-file "validationTestSet_20151115" --verbosity 1
+
+#Genomewide prediction
+time ./genomewidePrediction.py --output-folder ../example/ouput/genomewidePrediction --feature-columns "3,4,5,6,7,8,9,15,17" --genome_file ../example/input/genomeFile.txt --model_file ../model/Model_20151117.pkl --save-file "_20151116" --scaler_file ../model/Scaler_20151117.pkl --verbosity 1
+
+#Train and predict using SVM classifier
+time ./trainAndPredictSVM.py --data-file ../example/input/sample_training.txt --output-folder ../example/ouput/trainAndPredictSVM --feature-columns "3,4,5,6,7,8,9,15,17" --label-column "1" --percent-test-size 0.20 --fold-cross-validation 10 --save-file "20151115" --SVM_C_min 0 --SVM_C_max 1 --SVM_gamma_min 0 --SVM_gamma_max 1 --n-jobs 4 --verbosity 1
+
+#Calculate ML measures
+time python calculateML_measures.py --data-file  ./../example/input/compare_algo.txt --label-column "1"
+
+#Perform overlap with elements
+time perl ~/ML_tool/Resources/PublicScripts/votingScore.pl --chrSize ../example/input/enhancer.bed --l ../example/input/genomeWidevoting_list.txt --o ../example/ouput/votingScore_K562
+
+#Plot size distribution
+Rscript plot_size_distribution.R ./../example/input/size.txt 
+
+#Perform enrichment analysis
+Rscript /users/so/sjhanwar/ML_tool/bin/Enrichment_analysis.R ../example/input/enhancer.bed ./../AccessaryFiles/Human_gencode.v19_exon_Protein_coding.bed ../example/input/genomeWidevoting_list.txt ../example/ouput enrich
+
+#Building training data
+time perl buildTrainingData.pl --chrSize ../example/input/training_input.txt --l ./../example/input/list.txt --gmSize ./../AccessaryFiles/Hg19_ChromosomeSize.txt --tss ./../AccessaryFiles/Human_gencode.v19_tss_coding.bed --gbFile ./../AccessaryFiles/Human_gencode.v19_exon_Protein_coding.bed --inFile ./../AccessaryFiles/Human_gencode.v19_intron_Protein_coding.bed --o ../example/input/Training_data --aTSS ../AccessaryFiles/Human_gencode.v19_tss_coding_non-coding_6_column.bed
+
+Note: change the path of the files in <list.txt> according to your path. Also change the path of input files accoding to the path on your computer
+
+#Prepare genomewide prediction
+time perl prepare_genomeWidePrediction.pl --l ./../example/input/list.txt --gmSize ./../AccessaryFiles/Hg19_ChromosomeSize.txt --tss ./../AccessaryFiles/Human_gencode.v19_tss_coding_non-coding.bed --o ./../example/ouput/PrepareGenomewide --active /users/so/sjhanwar/H3k27ac.bed,/users/so/sjhanwar/H3k9ac.bed --aTSS ../AccessaryFiles/Human_gencode.v19_tss_coding_non-coding_6_column.bed
+
+Note: change the path of the files in <list.txt> according to your path. Also change the path of input files accoding to the path on your computer

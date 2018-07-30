@@ -1,0 +1,7 @@
+GEP (Generalize Enhancer Predictor) is a Random Forest based machine-learning tool for identification of putative enhancers using chromatin dynamics data. The Random Forest model is implemented in python. The package also contains accessary programs required for the analysis. The tool is licensed under General Public License (GPLv3)
+
+Published Open Access at Genome biology: “A genome-wide active enhancer prediction approach utilizing cell-line or tissue specific epigenomic activity in human and mouse”
+
+Please use “GitHub Issues” to report bugs occur during the implementation of the software.
+Documentation can be found at http://GEP/readthedocs….. 
+

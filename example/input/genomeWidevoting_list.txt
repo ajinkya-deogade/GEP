@@ -1,0 +1,3 @@
+/users/so/sjhanwar/ML_tool/Resources/Kwasnieski_paper/479_Positive_class_VISTA_FANTOMeRNA	Experiment
+/users/so/sjhanwar/ML_tool/Resources/ValidationDataset/ChIA-PET/Promoter_intersected_enhacners_HiC_Combined_K562_ChIA-PET_Hi-C.bed	3D-interaction
+/users/so/sjhanwar/ML_tool/Resources/ManuscriptFiles/ManuscriptData/AccessaryTempFiles/K562_GenomewidePrediction_manu_250bp_overlap/VotingScore/Yip_DRM_BAR_TFBS_ChIP_seq_Encode.bed	ChIP_seq
