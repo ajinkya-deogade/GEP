@@ -41,15 +41,15 @@ class Mock(object):
         else:
             return Mock()
 
-MOCK_MODULES = ['MySQLdb',
-                '_mysql_exceptions',
-                'cx_Oracle',
-                'log',
-                'pymongo',
-                'requests',
-                ]
-for mod_name in MOCK_MODULES:
-    sys.modules[mod_name] = Mock()
+# MOCK_MODULES = ['MySQLdb',
+#                '_mysql_exceptions',
+#                'cx_Oracle',
+#                'log',
+#                'pymongo',
+#                'requests',
+#                ]
+#for mod_name in MOCK_MODULES:
+#    sys.modules[mod_name] = Mock()
 
 # -- General configuration -----------------------------------------------------
 
