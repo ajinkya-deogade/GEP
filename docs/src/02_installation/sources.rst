@@ -31,10 +31,10 @@ For successful implementation of the software, please make sure that your system
 Installation
 ============
 
-1. GitHub: source archive on this page: https://github.com/Alignak-monitoring/alignak/releases
+1. GitHub:
 
-    Run in a terminal: git colne <http link>
+    Run in terminal: git clone https://github.com/ajinkya-deogade/GEP.git
 
-2. Download from <ftp.//………/GEP.tar.gz>
+2. Download from https://github.com/ajinkya-deogade/GEP/archive/master.zip
 
-    Download it and uncompressed the code as: tar –xvzf GEP.tar.gz
+    Download it and uncompressed the code as: gzip GEP-master.zip
