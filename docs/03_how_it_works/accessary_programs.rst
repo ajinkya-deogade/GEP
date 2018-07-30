@@ -22,17 +22,16 @@ Overlaps with different categories will be shown on stdout
 
 * Calculate ML measures: If you have predictions from different softwares on the same dataset and you want to compare ML measures provided by each of them, use ::
 
-python calculateML_measures.py --data-file <dataFile> --label-column <label indice>
-where, datafile is a 2D matrix with Name, class and features columns
+    python calculateML_measures.py --data-file <dataFile> --label-column <label indice>
+
+    where, datafile is a 2D matrix with Name, class and features columns
 
 Note: see example folder (Link). Visit :ref:`howitworks/o_calML` for output
 
 
 * validationTestSet.py: If you have a test dataset with the information of the classes, then use this program to get the accuracy given by the model on the test dataset.
 
-Run::
-
-python validationTestSet.py --output-folder <outFolder> --label-column <"class indices"> --feature-columns <"feature indices"> --test_file "test_file.txt" --model_file <ModelFile> --scalar_file <ScalerFile> --save-file "File Prefix" --verbosity 1
+    Run::
+    python validationTestSet.py --output-folder <outFolder> --label-column <"class indices"> --feature-columns <"feature indices"> --test_file "test_file.txt" --model_file <ModelFile> --scalar_file <ScalerFile> --save-file "File Prefix" --verbosity 1
 
 Visit :ref:`howitworks/o_vt` for output
-
