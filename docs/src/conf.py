@@ -196,7 +196,7 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'Shalu.tex', u'GEP Documentation',
-   u'Shalu Jhanwar et al.', 'manual'),
+   u'Shalu Jhanwar, Ajinkya Deogade et al.', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -226,7 +226,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'GEP', u'GEP Documentation',
-     [u'Shalu Jhanwar et al.'], 1)
+     [u'Shalu Jhanwar, Ajinkya Deogade et al.'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -240,7 +240,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'GEP', u'GEP Documentation',
-   u'Shalu Jhanwar et al.', 'GEP', 'One line description of project.',
+   u'Shalu Jhanwar, Ajinkya Deogade et al.', 'GEP', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -258,9 +258,9 @@ texinfo_documents = [
 
 # Bibliographic Dublin Core info.
 epub_title = u'GEP'
-epub_author = u'Shalu Jhanwar et al.'
-epub_publisher = u'Shalu Jhanwar et al.'
-epub_copyright = u'2015, Shalu Jhanwar et al.'
+epub_author = u'Shalu Jhanwar, Ajinkya Deogade et al.'
+epub_publisher = u'Shalu Jhanwar, Ajinkya Deogade et al.'
+epub_copyright = u'2015, Shalu Jhanwar, Ajinkya Deogade et al.'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
